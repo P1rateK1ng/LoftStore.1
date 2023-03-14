@@ -44,10 +44,13 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'products.apps.ProductsConfig',
     'orders.apps.OrdersConfig',
+
     # DRF
     'rest_framework',
+
     # DRF jwt Framework
     'rest_framework_simplejwt',
+
     #ckeditor
     'ckeditor'
 ]
@@ -160,10 +163,9 @@ MEDIA_URL = '/media/'
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-    "ROTATE_REFRESH_TOKENS": False,
-    "BLACKLIST_AFTER_ROTATION": False,
-    "UPDATE_LAST_LOGIN": False,
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=15),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
 
     "ALGORITHM": "HS256",
     "SIGNING_KEY": SECRET_KEY,
