@@ -1,8 +1,14 @@
 from rest_framework.serializers import ModelSerializer
-from products.models import ProductModel
+from products.models import ProductModel, ProductCategoryModel
 
 
-class ProductModelSerializer(ModelSerializer):
+class ProductCategorySerializer(ModelSerializer):
+    class Meta:
+        model = ProductCategoryModel
+        fields = "__all__"
+
+
+class ProductSerializer(ModelSerializer):
     class Meta:
         model = ProductModel
-        exclude = ['id']
+        fields = "__all__"
