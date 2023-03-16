@@ -10,7 +10,7 @@ class CartModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
     class Meta:
         verbose_name = "Корзина"
@@ -18,13 +18,13 @@ class CartModel(models.Model):
 
 class CartItemModel(models.Model):
     id = models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True)
-    cart = models.ForeignKey(CartModel, on_delete=models.CASCADE, verbose_name='корзина')
-    user = models.ForeignKey(UserModel, on_delete=models.CASCADE, verbose_name='покупатель')
-    product = models.ForeignKey(ProductModel, on_delete=models.CASCADE, verbose_name='продукт')
+    cart = models.ForeignKey(CartModel, on_delete=models.CASCADE, verbose_name='корзина', related_name='items')
+    user = models.ForeignKey(UserModel, on_delete=models.CASCADE, verbose_name='покупатель', related_name='user')
+    product = models.ForeignKey(ProductModel, on_delete=models.CASCADE, verbose_name='продукт', related_name='products')
     count = models.PositiveIntegerField(default=0, verbose_name='количество продукта в корзине')
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
     class Meta:
         verbose_name = "Товар в корзине"

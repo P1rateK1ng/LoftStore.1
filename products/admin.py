@@ -14,7 +14,6 @@ class ProductAdminForm(forms.ModelForm):
 
 @admin.register(ProductModel)
 class ProductAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('name',)}
     list_display = ('id', 'name', 'category', 'price',)
     search_fields = ('name',)
     list_filter = ('category',)
@@ -24,7 +23,6 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(ProductCategoryModel)
 class ProductCategoryAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('name',)}
     list_display = ('name', 'slug')
     search_fields = ('name', 'slug')
     list_filter = ('slug',)

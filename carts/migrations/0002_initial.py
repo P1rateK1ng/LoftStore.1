@@ -11,13 +11,13 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('orders', '0001_initial'),
+        ('carts', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='order',
+            model_name='cartitemmodel',
             name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Заказавший пользователь'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='user', to=settings.AUTH_USER_MODEL, verbose_name='покупатель'),
         ),
     ]
