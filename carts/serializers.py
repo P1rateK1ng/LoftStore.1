@@ -24,7 +24,7 @@ class CartSerializer(serializers.ModelSerializer):
         model = CartModel
         fields = "__all__"
 
-class TestCartItemSerializer(serializers.ModelSerializer):
+class CreateCartItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CartItemModel
