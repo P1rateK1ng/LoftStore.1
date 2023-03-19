@@ -1,5 +1,4 @@
-from rest_framework import mixins
-from rest_framework.viewsets import GenericViewSet, ModelViewSet
+from rest_framework.viewsets import ModelViewSet
 from rest_framework import permissions
 from products.serializers import ProductSerializer, ProductCategorySerializer
 from products.models import ProductModel, ProductCategoryModel

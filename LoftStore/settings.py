@@ -48,12 +48,13 @@ INSTALLED_APPS = [
 
     # DRF
     'rest_framework',
-
-    # DRF jwt Framework
     'rest_framework_simplejwt',
 
     #ckeditor
-    'ckeditor'
+    'ckeditor',
+    
+    # swagger:
+    'drf_yasg',
 ]
 
 
